@@ -1,13 +1,85 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: montserrat;
+  /* background-color: #1c2127; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(../public/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.object-detector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.detector-container {
+  min-width: 400px;
+  height: 550px;
+  /* background-color: #1c2127; */
+  border: 3px solid #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.target-img {
+  height: 100%;
+}
+
+.hidden-file-input {
+  display: none;
+}
+
+.select-button {
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none;
+  margin-top: 2em;
+  cursor: pointer;
+  transition: all 260ms ease-in-out;
+}
+
+.select-button:hover {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.target-box {
+  position: absolute;
+  border: 4px solid #1ac71a;
+  background-color: transparent;
+  z-index: 20;
+}
+
+.target-box::before {
+  content: attr(data-class) " " attr(data-score) "%";
+  color: #1ac71a;
+  font-weight: 500;
+  font-size: 17px;
+  position: absolute;
+  top: -1.5em;
+  left: -5px;
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 }
